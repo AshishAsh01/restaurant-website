@@ -101,6 +101,13 @@
               <!-- <input type="password" placeholder="Confirm Password" /> -->
               {{ form.password2(placeholder = 'Confirm Password') }}
             </div>
+            <h3 {% with messages = get_flashed_messages() %}  
+         {% if messages %}  
+               {% for message in messages %}  
+                    <p>{{ message }}</p>  
+               {% endfor %}  
+         {% endif %}  
+      {% endwith %} </h3>
             <!-- <input type="submit" class="btn" value="Sign up" /> -->
             {{ form.submit(class = 'btn') }}
 
